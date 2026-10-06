@@ -1,0 +1,8 @@
+{
+  // Static site: everything in ./public is published as-is. No build step.
+  "name": "bufloco-site",
+  "compatibility_date": "2026-09-01",
+  "assets": {
+    "directory": "./public"
+  }
+}
