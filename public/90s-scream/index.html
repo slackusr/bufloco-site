@@ -122,11 +122,13 @@ h1 .big .o{display:block;font-size:.84em}
 .cta:hover{background:var(--ink);color:var(--paper)}
 .cta:active{transform:translate(4px,4px);box-shadow:1px 1px 0 var(--ink)}
 .fine{margin:0;color:var(--muted);font-size:.92rem;font-weight:600}
-.supporting{border-left:3px dashed var(--ink);padding:2.4rem clamp(1.25rem,3vw,2.2rem) 1.6rem;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.7rem;background:var(--paper-2);min-width:0}
-.supporting .label{color:var(--muted)}
-.supporting svg{width:min(15rem,70%);height:auto}
-.supporting .org{margin:0;font-size:clamp(2.1rem,4.6vw,2.7rem);line-height:.95}
-.supporting p.why{margin:0;font-weight:700;font-size:.98rem;text-wrap:balance;max-width:24rem}
+.supporting{border-left:3px dashed var(--ink);padding:2.4rem clamp(1.25rem,3vw,2.2rem) 1.8rem;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.1rem;background:var(--ink);color:var(--paper);min-width:0}
+.supporting .label{color:var(--orange)}
+.logos{list-style:none;margin:0;padding:0;display:grid;gap:1.5rem;justify-items:center;width:100%}
+.logos li{width:100%;display:flex;justify-content:center}
+.logos img{display:block;height:auto}
+.logos li:nth-child(1) img{width:min(100%,17rem)}
+.logos li:nth-child(2) img{width:min(100%,18rem)}
 
 /* black screen-print field */
 .inkfield{background:var(--ink);color:var(--paper);position:relative;padding-top:1px}
@@ -239,15 +241,12 @@ footer a:hover{color:var(--orange)}
           <a class="cta" href="https://tix.gobo.show/events/event/KYwRla5Adm33WINlsAAA" target="_blank" rel="noopener">Get tickets</a>
           <p class="fine">Same ticket link as the QR code on the poster.</p>
         </div>
-        <div class="supporting">
-          <p class="label">Proudly supporting</p>
-          <svg viewBox="0 0 240 70" aria-hidden="true">
-            <path d="M120 42 C100 20 62 14 18 22 C42 28 58 34 66 42 C46 40 30 44 18 52 C52 48 86 52 120 58 Z" fill="#f05a1a" stroke="#141110" stroke-width="3" stroke-linejoin="round"/>
-            <path d="M120 42 C140 20 178 14 222 22 C198 28 182 34 174 42 C194 40 210 44 222 52 C188 48 154 52 120 58 Z" fill="#f05a1a" stroke="#141110" stroke-width="3" stroke-linejoin="round"/>
-            <circle cx="120" cy="46" r="9" fill="#141110"/>
-          </svg>
-          <p class="org cond">Wings Flights of Hope</p>
-          <p class="why">Orchard Park volunteer pilots flying patients to the medical care they need.</p>
+        <div class="supporting sponsors">
+          <p class="label">Brought to you by</p>
+          <ul class="logos">
+            <li><img src="sponsor-hollyweed.png" width="760" height="194" alt="Hollyweed"></li>
+            <li><img src="sponsor-cannaspace.png" width="900" height="67" alt="Cannaspace"></li>
+          </ul>
         </div>
       </div>
     </div>
