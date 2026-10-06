@@ -39,6 +39,8 @@ a:focus-visible,button:focus-visible{outline:4px solid var(--orange);outline-off
 .toon{font-family:var(--display);font-weight:400;letter-spacing:-.005em;
   -webkit-text-stroke:.06em var(--ink);paint-order:stroke fill;text-shadow:.05em .06em 0 var(--ink)}
 .toon .o{color:var(--orange)} .toon .k{color:var(--ink)} .toon .p{color:var(--paper)}
+/* solid black lettering on cards stays crisp: no outline or shadow smearing into the fill */
+.panel .toon .k{-webkit-text-stroke:0;text-shadow:none}
 .cond{font-family:var(--cond);font-weight:400;letter-spacing:.02em;line-height:.95}
 
 /* screen-print panel */
@@ -85,7 +87,6 @@ a:focus-visible,button:focus-visible{outline:4px solid var(--orange);outline-off
 .datebadge{display:inline-block;transform:rotate(-5deg);margin:0 0 1.3rem;background:var(--paper);color:var(--ink);border:3px solid var(--ink);padding:.45rem .8rem .3rem;font-size:clamp(1.6rem,3.6vw,2.3rem);box-shadow:5px 5px 0 var(--orange)}
 .datebadge b{color:var(--orange-deep);font-weight:400}
 h1{margin:0}
-h1 .who{display:inline-block;font:400 clamp(1.9rem,4.8vw,3rem)/1 var(--cond);letter-spacing:.04em;color:var(--ink);background:var(--orange);border:3px solid var(--ink);box-shadow:5px 5px 0 var(--ink);padding:.2em .35em .08em;margin-bottom:.4em;-webkit-text-stroke:0;text-shadow:none}
 h1 .big{display:block;font-size:clamp(4rem,12.5vw,8.4rem);line-height:.9}
 h1 .big .k{display:block;color:var(--paper)}
 h1 .big{text-shadow:.05em .06em 0 var(--ink),0 0 .5em rgba(240,90,26,.45)}
@@ -210,7 +211,6 @@ footer a:hover{color:var(--orange)}
       <div>
         <p class="datebadge cond">Saturday <b>Oct 24th</b></p>
         <h1 class="toon">
-          <span class="who">The West Ends present</span>
           <span class="big"><span class="k">90's</span><span class="o">Scream<span class="three" aria-label="3"><span>3</span></span></span></span>
           <span class="yr"><mark>The third annual · Halloween 2026</mark></span>
         </h1>
