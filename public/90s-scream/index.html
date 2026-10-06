@@ -160,7 +160,10 @@ h1 .big .o{display:block;font-size:.84em}
 .ways .w{font:400 2rem/1 var(--cond);letter-spacing:.03em}
 .ways p{margin:.3rem 0 0;color:var(--muted);font-size:.98rem}
 
-.go{padding:clamp(1.8rem,4vw,2.6rem) clamp(1.25rem,4vw,2.5rem) clamp(1.5rem,4vw,2.2rem);display:flex;flex-wrap:wrap;gap:1.5rem 3rem;align-items:center;justify-content:space-between}
+.go{padding:clamp(1.8rem,4vw,2.6rem) clamp(1.25rem,4vw,2.5rem) clamp(1.5rem,4vw,2.2rem);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,19rem);gap:1rem 2rem;align-items:end}
+.go-main{display:grid;gap:1.5rem;align-content:center;min-width:0;max-width:34rem;align-self:center}
+.squatch{display:block;width:100%;max-width:19rem;height:auto;justify-self:end;margin-bottom:calc(-1 * clamp(1.5rem,4vw,2.2rem) + 4px);transform:rotate(-3deg);transform-origin:50% 100%}
+@media (max-width:700px){.go{grid-template-columns:1fr}.squatch{max-width:13rem;justify-self:center;margin-top:-.5rem}}
 .go h2{margin:0 0 .6rem;color:var(--ink)}
 .go .toon{-webkit-text-stroke:.06em var(--ink);text-shadow:.05em .06em 0 var(--ink)}
 .go p{margin:0;max-width:30rem}
@@ -299,6 +302,7 @@ footer a:hover{color:var(--orange)}
 
     <section class="wrap sec" aria-labelledby="go-h" style="padding-top:0">
       <div class="panel capped go">
+        <div class="go-main">
         <div>
           <h2 id="go-h" class="toon"><span class="k">See you</span> <span class="o">Oct 24</span></h2>
           <p>Doors at 6pm at Wings Meeting Place in Orchard Park. Wear the costume. Bring your friends.</p>
@@ -311,6 +315,8 @@ footer a:hover{color:var(--orange)}
           <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Wings+Meeting+Place+3964+California+Rd+Orchard+Park+NY" target="_blank" rel="noopener">Open in Maps</a>
           <a class="cta" href="https://tix.gobo.show/events/event/KYwRla5Adm33WINlsAAA" target="_blank" rel="noopener">Get tickets</a>
         </div>
+        </div>
+        <img class="squatch" src="rocksquatch-jason.png" width="627" height="640" alt="Rocksquatch in a hockey mask, throwing the horns and holding a machete.">
       </div>
     </section>
   </div>
