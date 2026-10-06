@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>90's Alt-Mas Bash</title>
+<meta name="description" content="The West Ends' 90's Alt-Mas Bash 2026. Saturday, December 12 at The Cove in Buffalo, NY, supporting PUNT Pediatric Cancer Collaborative.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Archivo:wght@400;500;700;800;900&display=swap">
+<style>
+/* Layout: the poster's world. Blizzard-blue sky with snow, C9 bulb string, chunky snow-capped cartoon lettering.
+   Hero = title + ticket card beside the poster; band-scene banner; run of show; PUNT; sponsors; snowbank footer.
+   Committed single look (daytime cartoon), comic-panel cards: thick ink outline + hard offset shadow. */
+:root{
+  color-scheme:light;
+  --sky:#45aee6; --sky-deep:#1f6fa8; --snow:#ffffff; --frost:#e9f5fc; --ink:#111111;
+  --red:#e2231a; --green:#7fae2e; --gold:#f6c22e; --purple:#7a3ea3; --muted:#3c4a55;
+  --bank:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='120'%20height='30'%20viewBox='0%200%20120%2030'%3E%3Cpath%20d='M0%2011%20Q10%201%2020%209%20Q30%203%2040%2010%20Q50%201%2060%209%20Q70%204%2080%2010%20Q90%201%20100%209%20Q110%203%20120%2011%20L120%2030%20L0%2030%20Z'%20fill='%23ffffff'/%3E%3Cpath%20d='M0%2011%20Q10%201%2020%209%20Q30%203%2040%2010%20Q50%201%2060%209%20Q70%204%2080%2010%20Q90%201%20100%209%20Q110%203%20120%2011'%20fill='none'%20stroke='%23111111'%20stroke-width='3'%20stroke-linecap='round'/%3E%3C/svg%3E");
+  --display:"Luckiest Guy","Arial Black",Impact,sans-serif;
+  --sans:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --icing:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='30' viewBox='0 0 120 30'%3E%3Cpath d='M0 11 Q10 1 20 9 Q30 3 40 10 Q50 1 60 9 Q70 4 80 10 Q90 1 100 9 Q110 3 120 11 L120 15 Q114 15 112 21 Q110 28 106 21 Q104 15 96 16 L70 16 Q66 16 64 23 Q62 29 58 23 Q56 16 50 16 L30 16 Q26 16 25 20 Q24 25 21 20 Q20 16 14 16 L0 15 Z' fill='%23ffffff' stroke='%23111111' stroke-width='3' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+*{box-sizing:border-box}
+body{background:var(--sky);color:var(--ink);font:500 1.0625rem/1.6 var(--sans);margin:0}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:4px solid var(--gold);outline-offset:3px}
+.wrap{max-width:72rem;margin:0 auto;padding-inline:clamp(16px,4vw,48px)}
+.label{font:800 .78rem/1.3 var(--sans);letter-spacing:.12em;text-transform:uppercase;margin:0}
+
+/* cartoon type: fill + ink outline + hard shadow */
+.toon{font-family:var(--display);font-weight:400;text-transform:uppercase;letter-spacing:.01em;
+  -webkit-text-stroke:.07em var(--ink);paint-order:stroke fill;text-shadow:.06em .07em 0 var(--ink)}
+.toon .r{color:var(--red)} .toon .g{color:var(--green)} .toon .w{color:var(--snow)} .toon .y{color:var(--gold)}
+
+/* comic panel */
+.panel{position:relative;background:var(--snow);border:3px solid var(--ink);box-shadow:7px 7px 0 var(--ink);border-radius:14px}
+.panel.capped{margin-top:14px}
+.panel.capped::before{content:"";position:absolute;left:-3px;right:-3px;top:-14px;height:30px;background:var(--icing) repeat-x 0 0/120px 30px;border-radius:12px 12px 0 0;pointer-events:none}
+
+/* top bar */
+.masthead{position:relative;z-index:3}
+.top{position:absolute;left:0;right:0;top:100%;display:flex;justify-content:flex-end;padding-block:.5rem;pointer-events:none}
+.topright{display:flex;flex-direction:column;align-items:flex-end;gap:.35rem;pointer-events:auto}
+@media (max-width:860px){.top{position:relative;top:auto;padding-block:.4rem 0}}
+.top a{text-decoration:none}
+.home{font-size:1.5rem;line-height:1}
+.top .label a{color:var(--snow);text-shadow:0 1px 0 rgba(0,0,0,.35)}
+.top .label a:hover{color:var(--ink);text-shadow:none}
+
+/* bulbs */
+.lights{position:relative;height:64px;z-index:2}
+.lights svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.wire{fill:none;stroke:var(--ink);stroke-width:3}
+.bulb path{stroke:var(--ink);stroke-width:2.5}
+.bulb rect{fill:#2b2b2b;stroke:var(--ink);stroke-width:2}
+.bulb .hl{fill:#fff;opacity:.55;stroke:none}
+@media (prefers-reduced-motion:no-preference){
+  .bulb.tw{animation:tw 2.6s ease-in-out infinite}
+  .bulb.tw.d1{animation-delay:.8s} .bulb.tw.d2{animation-delay:1.6s}
+}
+@keyframes tw{0%,100%{filter:none}50%{filter:brightness(.6)}}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding-bottom:clamp(3rem,7vw,5rem)}
+#snow{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.hero-in{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(2rem,5vw,4rem);align-items:start;padding-top:clamp(.5rem,1.5vw,1rem)}
+@media (max-width:860px){.hero-in{grid-template-columns:1fr}}
+.datebadge{display:inline-block;transform:rotate(-6deg);font-size:clamp(1.5rem,3.4vw,2.1rem);line-height:1.05;margin:0 0 1.4rem;color:var(--snow)}
+h1{margin:0}
+h1 .who{display:block;font-size:clamp(1.9rem,5vw,3.2rem);line-height:1.05;color:var(--red);margin-bottom:.3em}
+h1 .big{display:block;font-size:clamp(4.2rem,13vw,8.6rem);line-height:.98}
+.pitch{max-width:33rem;margin:1.6rem 0 0;font-weight:600;font-size:1.1rem}
+
+.ticket .row{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;align-items:baseline;justify-content:space-between}
+.ticket .venue{font-size:clamp(2rem,5vw,2.6rem);line-height:1;margin:0}
+.ticket .venue .r{color:var(--red)}
+.ticket .town{color:var(--muted)}
+.ticket .doors{font:400 1.8rem/1 var(--display);margin:0}
+.cta{display:block;text-align:center;font:400 1.5rem/1 var(--display);letter-spacing:.03em;padding:1rem;border:3px dashed var(--ink);border-radius:10px;background:var(--frost);color:var(--ink);text-decoration:none;cursor:default}
+.priceline{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem 1rem;align-items:center}
+.poster-wrap{position:relative;max-width:30rem;margin-inline:auto;margin-top:4.6rem}
+.count{position:absolute;left:-4.2rem;top:-1.5rem;z-index:2;display:inline-flex;align-items:center;gap:.55rem;margin:0;background:var(--snow);border:3px solid var(--ink);border-radius:12px;box-shadow:6px 6px 0 var(--ink);padding:.4rem .85rem .4rem .75rem;transform:rotate(-7deg);pointer-events:none}
+.count b{font:400 clamp(2.3rem,5vw,3rem)/1 var(--display);color:var(--red);font-variant-numeric:tabular-nums;padding-top:.2rem;-webkit-text-stroke:.04em var(--ink);paint-order:stroke fill}
+.count span{font-weight:900;font-size:clamp(.68rem,1.3vw,.8rem);line-height:1.15;letter-spacing:.1em;text-transform:uppercase}
+@media (max-width:860px){.poster-wrap{margin-top:2.4rem}}
+@media (max-width:560px){.count{left:-.9rem;top:-1.6rem;transform:rotate(-7deg) scale(.8);transform-origin:0 0}}
+
+.poster{display:block;width:100%;max-width:30rem;height:auto;margin-inline:auto;border:4px solid var(--ink);border-radius:12px;box-shadow:10px 10px 0 var(--ink);transform:rotate(2deg);background:var(--frost)}
+.poster-cap{text-align:center;margin:1.4rem 0 0}
+.poster-cap button{font:800 .85rem var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--snow);text-shadow:0 1px 0 rgba(0,0,0,.35);background:none;border:0;text-decoration:underline;text-underline-offset:3px;cursor:pointer;padding:.3rem}
+.cards{position:relative;z-index:1;margin-top:clamp(2rem,5vw,3rem)}
+.combo{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);align-items:stretch}
+@media (max-width:860px){.combo{grid-template-columns:1fr}.supporting{border-left:0!important;border-top:3px dashed var(--ink)}}
+.cards .panel{margin-top:14px}
+.ticket{padding:1.8rem clamp(1.25rem,3vw,2.2rem) 1.6rem;display:grid;gap:1rem;align-content:space-between}
+.supporting{border-left:3px dashed var(--ink);padding:1.8rem clamp(1.25rem,3vw,2.2rem) 1.6rem;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.8rem}
+.supporting .label{color:var(--muted)}
+.supporting img{display:block;width:100%;max-width:19rem;height:auto}
+.supporting p.why{margin:0;font-weight:700;font-size:.98rem;text-wrap:balance;max-width:24rem}
+.door{font:400 1.7rem/1 var(--display);color:var(--red)}
+.poster-btn{display:block;width:100%;max-width:30rem;margin-inline:auto;padding:0;border:0;background:none;cursor:zoom-in}
+.lightbox{position:fixed;inset:0;z-index:50;background:rgba(10,30,45,.92);display:flex;align-items:center;justify-content:center;padding:calc(16px + env(safe-area-inset-top,0px)) 16px calc(16px + env(safe-area-inset-bottom,0px))}
+.lightbox[hidden]{display:none}
+.lightbox img{max-width:100%;max-height:100%;width:auto;height:auto;border:4px solid var(--ink);border-radius:10px;cursor:zoom-out}
+.lightbox .close{position:absolute;top:calc(12px + env(safe-area-inset-top,0px));right:12px;font:400 1.3rem var(--display);background:var(--red);color:var(--snow);border:3px solid var(--ink);border-radius:8px;box-shadow:4px 4px 0 var(--ink);padding:.5rem .9rem;cursor:pointer}
+
+/* sections on snow */
+.snowfield{background:var(--snow);position:relative;padding-top:1px}
+.snowfield::before{content:"";position:absolute;left:0;right:0;top:-29px;height:30px;background:var(--bank) repeat-x 0 0/120px 30px;pointer-events:none}
+.sec{padding-block:clamp(3rem,7vw,5rem)}
+.sec h2{margin:0 0 1.8rem;font-size:clamp(2.6rem,7vw,4.4rem);line-height:.92;text-wrap:balance}
+
+.banner{display:block;width:100%;height:auto;aspect-ratio:1600/528;object-fit:cover;border:4px solid var(--ink);border-radius:14px;box-shadow:8px 8px 0 var(--ink);max-width:100%}
+.run{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.4rem}
+@media (max-width:700px){.run{grid-template-columns:1fr}}
+.run li{padding:1.3rem 1.4rem 1.2rem;min-width:0}
+.run .t{font:400 2.6rem/1 var(--display);margin-top:.35rem}
+.run .w{font-weight:800;font-size:1.05rem;margin-top:.35rem}
+.run li.live{background:var(--red);color:var(--snow)}
+.run li.live .t{color:var(--snow)}
+
+.cause{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(2rem,5vw,4rem);align-items:start}
+@media (max-width:860px){.cause{grid-template-columns:1fr}}
+.cause p{margin:0 0 1rem;max-width:36rem}
+.ribbon-line{display:flex;align-items:center;gap:.8rem;margin:.4rem 0 1rem}
+.ribbon-line .dot{flex:none;width:14px;height:14px;border-radius:50%;background:var(--gold);border:3px solid var(--ink)}
+.punt{font:400 clamp(1.9rem,4.4vw,2.7rem)/1 var(--display);margin:0}
+.ways{list-style:none;margin:0;padding:0;display:grid;gap:1.4rem}
+.ways li{padding:1.1rem 1.3rem}
+.ways .w{font:400 1.7rem/1 var(--display)}
+.ways p{margin:.4rem 0 0;color:var(--muted);font-size:.98rem}
+.ways li:nth-child(1){border-left:12px solid var(--gold)}
+.ways li:nth-child(2){border-left:12px solid var(--green)}
+.ways li:nth-child(3){border-left:12px solid var(--purple)}
+
+.sponsor{padding:clamp(1.5rem,4vw,2.5rem);display:flex;flex-wrap:wrap;gap:1.5rem 3rem;align-items:center;justify-content:space-between;background:var(--frost)}
+.sponsor h2{margin:0 0 .6rem}
+.sponsor p{margin:0;max-width:30rem}
+.mail{display:flex;flex-wrap:wrap;align-items:center;gap:.8rem;min-width:0}
+.mail code{font:400 clamp(1.4rem,4vw,2rem)/1 var(--display);user-select:all;word-break:break-all}
+.copy{font:800 .8rem var(--sans);letter-spacing:.1em;text-transform:uppercase;background:var(--red);color:var(--snow);border:3px solid var(--ink);border-radius:8px;box-shadow:4px 4px 0 var(--ink);padding:.6rem .9rem;cursor:pointer}
+.copy:active{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--ink)}
+
+footer{background:var(--snow);border-top:3px dashed #bcd9ea}
+footer .wrap{padding-block:2rem 3rem;display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-between;align-items:center}
+footer .sign{font-size:clamp(1.4rem,3.4vw,2.1rem);line-height:1.15;margin:0;text-wrap:balance}
+footer a{text-decoration:none}
+footer a:hover{color:var(--red)}
+</style>
+<style>[hidden]{display:none!important}img{max-width:100%}</style>
+</head>
+<body>
+
+<div class="masthead">
+<div id="top" class="lights" aria-hidden="true"><svg id="lights"></svg></div>
+<header class="wrap top">
+  <div class="topright">
+    <p class="label"><a href="https://facebook.com/TheWestEnds">facebook.com/TheWestEnds</a></p>
+    <a class="home toon" href="#top"><span class="r">Alt</span><span class="w">-</span><span class="g">Mas</span> <span class="w">2026</span></a>
+  </div>
+</header>
+</div>
+
+
+
+<main>
+  <section class="hero">
+    <canvas id="snow" aria-hidden="true"></canvas>
+    <div class="wrap hero-in">
+      <div>
+        <p class="datebadge toon">Saturday<br>Dec 12th</p>
+        <h1 class="toon">
+          <span class="who">The West Ends'</span>
+          <span class="big"><span class="r">90's</span><br><span class="g">Alt-Mas</span><br><span class="r">Bash</span></span>
+        </h1>
+        <p class="pitch">Buffalo's Alternative Band, The West Ends, is throwing the first annual 90's Alt-Mas Bash at The Cove on December 12th, raising money for PUNT Pediatric Cancer Collaborative to support local families facing pediatric cancer. Dust off the flannel, grab your Santa hat, and sing along to the songs you risked your family computer for on LimeWire.</p>
+
+      </div>
+
+      <div>
+        <div class="poster-wrap">
+          <button class="poster-btn" type="button" data-open aria-label="View the full poster"><img class="poster" src="poster.jpg" width="1000" height="1360" alt="The West Ends' 90's Alt-Mas Bash poster: Rocksquatch in a Santa hat playing a red guitar with a dog band in the snow in front of the Buffalo skyline. Saturday Dec 12th, The Cove, $15 at the door, supporting P.U.N.T. Pediatric Cancer Collaborative."></button>
+          <p class="count"><b id="days">68</b><span>days to<br>Alt-Mas</span></p>
+        </div>
+        <p class="poster-cap"><button type="button" data-open>View the full poster</button></p>
+      </div>
+    </div>
+    <div class="wrap cards">
+      <div class="panel capped combo">
+        <div class="ticket">
+          <div class="row">
+            <p class="venue toon"><span class="r">The Cove</span></p>
+            <p class="label town">Buffalo, NY · 2026</p>
+          </div>
+          <div class="row">
+            <p class="doors">Doors 6pm</p>
+            <p class="label">Music 6–10pm</p>
+          </div>
+          <a class="cta" aria-disabled="true">Ticket sales coming soon</a>
+          <div class="priceline">
+            <span class="door">$15 at the door</span>
+          </div>
+        </div>
+        <div class="supporting">
+          <p class="label">Proudly supporting</p>
+          <img src="punt-logo.svg" width="792" height="423" alt="PUNT Pediatric Cancer Collaborative">
+          <p class="why">Helping Western New York families facing pediatric cancer.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="snowfield">
+    <section class="wrap sec" aria-labelledby="run-h">
+      <h2 id="run-h" class="toon"><span class="r">The</span> <span class="g">Night</span></h2>
+      <ol class="run">
+        <li class="panel"><p class="label">6pm</p><div class="t">Doors</div><div class="w">Grab a drink, find your people</div></li>
+        <li class="panel"><p class="label">6–7pm</p><div class="t">DJ</div><div class="w">Warm-up set</div></li>
+        <li class="panel live"><p class="label">7–10pm</p><div class="t">Live</div><div class="w">The West Ends</div></li>
+      </ol>
+    </section>
+
+    <section class="wrap sec" aria-labelledby="cause-h" style="padding-top:0">
+      <h2 id="cause-h" class="toon"><span class="r">Party with a</span> <span class="g">purpose</span></h2>
+      <div class="cause">
+        <div>
+          <p class="label">Supporting</p>
+          <div class="ribbon-line"><span class="dot" aria-hidden="true"></span><p class="punt">PUNT Pediatric Cancer Collaborative</p></div>
+          <p>Alt-Mas raises money for PUNT and their work with Western New York families facing pediatric cancer.</p>
+          <p>You show up for the music and the chaos. Tickets, raffle entries and the 50/50 all help raise money for local families this holiday season.</p>
+        </div>
+        <ul class="ways">
+          <li class="panel"><div class="w">Big raffle prize</div><p>One large raffle item up for grabs. Details coming soon.</p></li>
+          <li class="panel"><div class="w">50/50 drawing</div><p>Half to the winner, half to the cause.</p></li>
+          <li class="panel"><div class="w">Sponsorships</div><p>Local businesses can put their name behind the night.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="wrap sec" aria-labelledby="sp-h" style="padding-top:0">
+      <div class="panel capped sponsor">
+        <div>
+          <h2 id="sp-h" class="toon"><span class="r">Sponsor</span> <span class="g">Alt-Mas</span></h2>
+          <p>Want your business behind Buffalo's 90s alternative Christmas party, or have something to donate? Send us a note.</p>
+        </div>
+        <div class="mail">
+          <code id="mail">90s.altmas@gmail.com</code>
+          <button class="copy" id="copy" type="button">Copy email</button>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Full poster" hidden>
+  <button class="close" type="button" id="lb-close">Close</button>
+  <img src="poster.jpg" width="1000" height="1360" alt="The West Ends' 90's Alt-Mas Bash poster, full size.">
+</div>
+
+<footer>
+  <div class="wrap">
+    <p class="sign toon"><span class="r">90's Alt-Mas</span> <span class="w">-</span> <span class="g">Buffalo Alternative with a Cause</span></p>
+    <p class="label"><a href="https://facebook.com/TheWestEnds">facebook.com/TheWestEnds</a></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  try{
+    var show=new Date(2026,11,12), now=new Date(); now.setHours(0,0,0,0);
+    var d=Math.round((show-now)/864e5), el=document.getElementById('days');
+    if(d>0){el.textContent=d;if(d===1)el.nextElementSibling.innerHTML='day to<br>Alt-Mas'}else{el.parentNode.textContent=d===0?'Tonight.':'See you next year.'}
+  }catch(e){}
+
+  // C9 bulb string in the poster's colors
+  var svg=document.getElementById('lights'), NS='http://www.w3.org/2000/svg';
+  var cols=['#e2231a','#f6c22e','#7fae2e','#7a3ea3','#45d0f0'];
+  function drawLights(){
+    var w=svg.clientWidth||1000,h=64,n=Math.max(7,Math.round(w/78)),step=w/n,sag=16;
+    svg.setAttribute('viewBox','0 0 '+w+' '+h);svg.innerHTML='';
+    var d='M-10 4';for(var i=0;i<n;i++){var x0=i*step;d+=' Q'+(x0+step/2)+' '+(4+sag*2)+' '+(x0+step)+' 4'}
+    d+=' L'+(w+10)+' 4';
+    var p=document.createElementNS(NS,'path');p.setAttribute('d',d);p.setAttribute('class','wire');svg.appendChild(p);
+    for(var j=0;j<n;j++){
+      var cx=j*step+step/2,cy=4+sag,g=document.createElementNS(NS,'g');
+      g.setAttribute('class','bulb tw d'+(j%3));
+      g.setAttribute('transform','translate('+cx+' '+cy+') rotate('+(j%2?10:-10)+')');
+      g.innerHTML='<rect x="-6" y="-2" width="12" height="10" rx="2"/>'+
+        '<path fill="'+cols[j%cols.length]+'" d="M-9 8 C-13 20 -8 34 0 39 C8 34 13 20 9 8 Z"/>'+
+        '<ellipse class="hl" cx="-3.5" cy="18" rx="2.2" ry="6"/>';
+      svg.appendChild(g);
+    }
+  }
+  drawLights();addEventListener('resize',drawLights);
+
+  // poster lightbox
+  var lb=document.getElementById('lightbox'),last=null;
+  function openLb(){last=document.activeElement;lb.hidden=false;document.getElementById('lb-close').focus()}
+  function closeLb(){lb.hidden=true;if(last)last.focus()}
+  Array.prototype.forEach.call(document.querySelectorAll('[data-open]'),function(b){b.addEventListener('click',openLb)});
+  lb.addEventListener('click',function(e){if(e.target!==e.currentTarget&&e.target.id!=='lb-close'&&e.target.tagName!=='IMG')return;closeLb()});
+  addEventListener('keydown',function(e){if(e.key==='Escape'&&!lb.hidden)closeLb()});
+
+  // blizzard
+  var c=document.getElementById('snow'),x=c.getContext('2d'),fl=[],W,H;
+  var still=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function size(){W=c.width=c.offsetWidth;H=c.height=c.offsetHeight;var n=Math.round(W*H/5000);fl=[];
+    for(var i=0;i<n;i++)fl.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()*2.4+.8,s:Math.random()*.6+.3,o:Math.random()*.5+.45})}
+  function draw(){x.clearRect(0,0,W,H);x.fillStyle='#fff';
+    for(var i=0;i<fl.length;i++){var f=fl[i];x.globalAlpha=f.o;x.beginPath();x.arc(f.x,f.y,f.r,0,6.283);x.fill();
+      if(!still){f.y+=f.s;f.x+=Math.sin(f.y/38)*.3;if(f.y>H){f.y=-4;f.x=Math.random()*W}}}
+    if(!still)requestAnimationFrame(draw)}
+  size();draw();addEventListener('resize',function(){size();if(still)draw()});
+
+  document.getElementById('copy').addEventListener('click',function(){
+    var b=this,t=document.getElementById('mail').textContent;
+    function pick(){var r=document.createRange();r.selectNodeContents(document.getElementById('mail'));var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected, press copy'}
+    try{navigator.clipboard.writeText(t).then(function(){b.textContent='Copied'},pick)}catch(e){pick()}
+    setTimeout(function(){b.textContent='Copy email'},2200);
+  });
+})();
+</script>
+
+</body>
+</html>

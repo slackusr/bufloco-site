@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Buf.Lo Co</title>
+<meta name="description" content="Buffalo owned. Everything Buffalo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: wordmark hero over a Buffalo waterfront skyline, footer. Lake-steel neutrals, rust-orange accent. */
+:root{
+  --bg:#eef0f1; --ink:#14212b; --muted:#56636c; --line:#c9d0d4;
+  --accent:#c4501c; --accent-ink:#ffffff; --lake:#1d3a52;
+  --sky-back:#d3d9dd; --sky-front:#a3afb7; --water:#2b4a63; --water-line:#5a7a93;
+  --display:"Big Shoulders Display","Impact","Arial Narrow",sans-serif;
+  --body:"Barlow","Helvetica Neue",Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f171d; --ink:#e7ecef; --muted:#93a1aa; --line:#2a3a46;
+  --accent:#e2682f; --accent-ink:#10161b; --lake:#9cc3e0;
+  --sky-back:#1b2832; --sky-front:#2e414e; --water:#0a1d2b; --water-line:#24435a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f171d; --ink:#e7ecef; --muted:#93a1aa; --line:#2a3a46;
+  --accent:#e2682f; --accent-ink:#10161b; --lake:#9cc3e0;
+  --sky-back:#1b2832; --sky-front:#2e414e; --water:#0a1d2b; --water-line:#24435a; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:400 1.0625rem/1.6 var(--body);margin:0}
+a{color:inherit}
+a:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:68rem;margin:0 auto;padding-inline:clamp(16px,4vw,40px)}
+.mono{font-family:var(--mono);font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+
+.bar{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;padding-block:1.1rem;border-bottom:1px solid var(--line)}
+.logo{font:900 1.5rem/1 var(--display);letter-spacing:.02em;text-decoration:none;text-transform:uppercase}
+.logo b{color:var(--accent)}
+
+.hero{padding-block:clamp(2.5rem,7vw,5rem) 0}
+.hero .mono{margin:0 0 1rem}
+.word{font:900 clamp(4.5rem,19vw,13.5rem)/.82 var(--display);text-transform:uppercase;margin:0;letter-spacing:-.01em}
+.word b{color:var(--accent)}
+.tag{display:flex;flex-wrap:wrap;gap:.5rem 2rem;align-items:baseline;margin:1.5rem 0 0}
+.tag p{margin:0;font:800 clamp(1.4rem,3.6vw,2.2rem)/1.1 var(--display);text-transform:uppercase;letter-spacing:.02em}
+.tag p span{color:var(--accent)}
+
+.skyline{display:block;width:100%;height:auto;margin-top:2.5rem}
+.skyline .back{fill:var(--sky-back)}
+.skyline .front{fill:var(--sky-front)}
+.skyline .arch{fill:none;stroke:var(--sky-front);stroke-width:3}
+.skyline .lit{fill:var(--accent)}
+.skyline .water{fill:var(--water)}
+.skyline .ripple{fill:var(--water-line)}
+
+
+footer{border-top:6px solid var(--ink);padding-block:2rem 2.5rem}
+footer .row{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;align-items:baseline}
+footer .big{font:900 2rem/1 var(--display);text-transform:uppercase;margin:0}
+footer .big b{color:var(--accent)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+<style>[hidden]{display:none!important}img{max-width:100%}</style>
+</head>
+<body>
+
+<header class="wrap bar">
+  <a class="logo" href="index.html">Buf<b>.</b>Lo Co</a>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <p class="mono">42.8864° N · 78.8784° W · Area code 716</p>
+      <h1 class="word">Buf<b>.</b>Lo<br>Co</h1>
+      <div class="tag">
+        <p>Buffalo owned<span>.</span></p>
+        <p>Everything Buffalo<span>.</span></p>
+      </div>
+    </div>
+
+    <svg class="skyline" viewBox="0 0 1000 210" role="img" aria-label="Buffalo waterfront skyline: the lighthouse, grain elevators, the Skyway, City Hall, downtown towers and the Peace Bridge over the water">
+      <!-- back layer: downtown fill buildings -->
+      <rect class="back" x="395" y="108" width="40" height="62"/>
+      <rect class="back" x="432" y="92" width="32" height="78"/>
+      <rect class="back" x="462" y="116" width="34" height="54"/>
+      <rect class="back" x="610" y="84" width="28" height="86"/>
+      <rect class="back" x="756" y="98" width="38" height="72"/>
+      <rect class="back" x="792" y="112" width="34" height="58"/>
+      <rect class="back" x="824" y="88" width="30" height="82"/>
+      <rect class="back" x="852" y="122" width="42" height="48"/>
+
+      <!-- breakwall + Buffalo Main Light -->
+      <rect class="front" x="0" y="162" width="110" height="8"/>
+      <polygon class="front" points="31,162 51,162 47,108 35,108"/>
+      <rect class="front" x="30" y="103" width="22" height="5"/>
+      <rect class="lit" x="35" y="90" width="12" height="13"/>
+      <polygon class="front" points="32,90 50,90 41,80"/>
+
+      <!-- grain elevators -->
+      <rect class="front" x="112" y="106" width="18" height="64"/>
+      <rect class="front" x="132" y="106" width="18" height="64"/>
+      <rect class="front" x="152" y="106" width="18" height="64"/>
+      <rect class="front" x="172" y="106" width="18" height="64"/>
+      <rect class="front" x="192" y="106" width="18" height="64"/>
+      <rect class="front" x="212" y="106" width="18" height="64"/>
+      <rect class="front" x="148" y="72" width="44" height="36"/>
+      <rect class="front" x="186" y="56" width="12" height="18"/>
+
+      <!-- Seneca One -->
+      <rect class="front" x="508" y="26" width="44" height="144"/>
+      <rect class="front" x="516" y="20" width="28" height="7"/>
+
+      <!-- Electric Tower -->
+      <rect class="front" x="572" y="96" width="34" height="74"/>
+      <rect class="front" x="577" y="74" width="24" height="23"/>
+      <rect class="front" x="582" y="60" width="14" height="15"/>
+      <rect class="lit" x="586" y="50" width="6" height="10"/>
+      <rect class="front" x="588" y="40" width="2" height="10"/>
+
+      <!-- City Hall -->
+      <rect class="front" x="628" y="102" width="88" height="68"/>
+      <rect class="front" x="652" y="54" width="40" height="49"/>
+      <rect class="front" x="657" y="42" width="30" height="13"/>
+      <polygon class="front" points="659,42 685,42 679,32 665,32"/>
+      <circle class="front" cx="672" cy="30" r="5"/>
+
+      <!-- Liberty Building with its two statues -->
+      <rect class="front" x="722" y="60" width="32" height="110"/>
+      <rect class="front" x="728" y="52" width="20" height="9"/>
+      <rect class="front" x="731" y="41" width="3" height="11"/><circle class="front" cx="732.5" cy="39.5" r="2"/><rect class="front" x="733" y="33" width="1.5" height="6"/>
+      <rect class="front" x="742" y="41" width="3" height="11"/><circle class="front" cx="743.5" cy="39.5" r="2"/><rect class="front" x="744" y="33" width="1.5" height="6"/>
+
+      <!-- KeyBank Center at Canalside -->
+      <path class="front" d="M432 170 V146 Q470 134 508 146 V170 Z"/>
+
+      <!-- Skyway -->
+      <polygon class="front" points="236,170 300,120 562,120 626,170 616,170 556,127 306,127 246,170"/>
+      <rect class="front" x="330" y="127" width="6" height="43"/>
+      <rect class="front" x="380" y="127" width="6" height="43"/>
+      <rect class="front" x="480" y="127" width="6" height="43"/>
+      <rect class="front" x="530" y="127" width="6" height="43"/>
+
+      <!-- Peace Bridge -->
+      <rect class="front" x="840" y="140" width="160" height="5"/>
+      <path class="arch" d="M846 170 Q868 132 890 170"/>
+      <path class="arch" d="M890 170 Q912 128 934 170"/>
+      <path class="arch" d="M934 170 Q956 132 978 170"/>
+      <path class="arch" d="M978 170 Q996 138 1014 170"/>
+
+      <!-- water -->
+      <rect class="water" x="0" y="170" width="1000" height="40"/>
+      <rect class="ripple" x="34" y="178" width="14" height="2"/>
+      <rect class="lit" x="38" y="184" width="6" height="2" opacity=".7"/>
+      <rect class="ripple" x="140" y="180" width="60" height="2"/>
+      <rect class="ripple" x="300" y="186" width="90" height="2"/>
+      <rect class="ripple" x="512" y="178" width="36" height="2"/>
+      <rect class="ripple" x="652" y="182" width="40" height="2"/>
+      <rect class="ripple" x="740" y="194" width="70" height="2"/>
+      <rect class="ripple" x="880" y="180" width="60" height="2"/>
+      <rect class="ripple" x="80" y="198" width="120" height="2"/>
+      <rect class="ripple" x="440" y="198" width="110" height="2"/>
+    </svg>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  <div class="row">
+    <p class="big">Made in the 716<b>.</b></p>
+    <span class="mono">© 2026 Buf.Lo Co · bufloco.com</span>
+  </div>
+</footer>
+
+</body>
+</html>
