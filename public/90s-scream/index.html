@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>90's Scream 3</title>
+<meta name="description" content="90's Scream 3 with live music by The West Ends. Saturday, October 24, 6–11pm at Wings Meeting Place in Orchard Park, NY. Costume contest, giveaways and a 50/50 supporting Wings Flights of Hope.">
+<meta property="og:title" content="90's Scream 3">
+<meta property="og:description" content="Sat Oct 24, 6–11pm at Wings Meeting Place, Orchard Park. Live music by The West Ends, costume contest, giveaways and 50/50 for Wings Flights of Hope.">
+<meta property="og:image" content="https://bufloco.com/90s-scream/share.jpg">
+<meta property="og:url" content="https://bufloco.com/90s-scream/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Bebas+Neue&family=Archivo:wght@400;500;700;800;900&display=swap">
+<style>
+/* Layout: the flyer's world. Psychedelic orange swirl up top, black screen-print ink below, cream paper panels.
+   Hero = title + ticket card beside the poster; the night; the cause; tickets + venue. Single committed look.
+   Same skeleton as /90s-altmas so the two events read as a series. */
+:root{
+  color-scheme:light;
+  --paper:#f4e9d6; --paper-2:#eadcc2; --orange:#f05a1a; --orange-deep:#c9410c; --ink:#141110; --ink-2:#262120;
+  --muted:#5e544a; --cream-dim:#c9bba3;
+  --display:"Bagel Fat One","Arial Black",Impact,sans-serif;
+  --cond:"Bebas Neue","Arial Narrow",Impact,sans-serif;
+  --sans:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --melt:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='40' viewBox='0 0 160 40'%3E%3Cpath d='M0 40 L0 22 Q8 22 10 14 Q12 6 16 14 Q18 20 26 20 L44 20 Q50 20 52 8 Q54 0 58 8 Q60 18 68 19 L92 19 Q98 19 100 12 Q102 5 106 12 Q108 21 118 21 L130 21 Q136 21 138 10 Q140 2 144 10 Q146 22 154 22 L160 22 L160 40 Z' fill='%23141110'/%3E%3C/svg%3E");
+  --drip:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='34' viewBox='0 0 140 34'%3E%3Cpath d='M0 0 L140 0 L140 12 Q130 12 128 18 Q126 30 121 30 Q116 30 115 18 Q114 12 100 12 L74 12 Q68 12 67 16 Q66 22 62 22 Q58 22 57 16 Q56 12 44 12 L30 12 Q22 12 21 20 Q20 33 14 33 Q8 33 8 20 Q8 12 0 12 Z' fill='%23f05a1a' stroke='%23141110' stroke-width='3' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font:500 1.0625rem/1.6 var(--sans);margin:0}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:4px solid var(--orange);outline-offset:3px}
+.wrap{max-width:72rem;margin:0 auto;padding-inline:clamp(16px,4vw,48px)}
+.label{font:800 .78rem/1.3 var(--sans);letter-spacing:.12em;text-transform:uppercase;margin:0}
+
+/* groovy type: fill + ink outline + hard shadow */
+.toon{font-family:var(--display);font-weight:400;letter-spacing:-.005em;
+  -webkit-text-stroke:.06em var(--ink);paint-order:stroke fill;text-shadow:.05em .06em 0 var(--ink)}
+.toon .o{color:var(--orange)} .toon .k{color:var(--ink)} .toon .p{color:var(--paper)}
+.cond{font-family:var(--cond);font-weight:400;letter-spacing:.02em;line-height:.95}
+
+/* screen-print panel */
+.panel{position:relative;background:var(--paper);color:var(--ink);border:3px solid var(--ink);box-shadow:7px 7px 0 var(--orange);border-radius:6px}
+.panel.capped{margin-top:12px}
+.panel.capped::before{content:"";position:absolute;left:-3px;right:-3px;top:-3px;height:34px;background:var(--drip) repeat-x 0 0/140px 34px;border-radius:6px 6px 0 0;pointer-events:none;z-index:1}
+
+/* ticker */
+.masthead{position:relative;z-index:3}
+.ticker{background:var(--ink);color:var(--paper);overflow:hidden;border-bottom:3px solid var(--ink);white-space:nowrap}
+.ticker .run{display:inline-flex;gap:0;padding-block:.55rem;font:400 1.35rem/1 var(--cond);letter-spacing:.08em}
+.ticker .run span{padding-inline:1.1rem}
+.ticker .run i{font-style:normal;color:var(--orange)}
+@media (prefers-reduced-motion:no-preference){.ticker .run{animation:tick 38s linear infinite}}
+@keyframes tick{to{transform:translateX(-50%)}}
+.top{position:absolute;left:0;right:0;top:100%;display:flex;justify-content:flex-end;padding-block:.6rem;pointer-events:none}
+.topright{display:flex;flex-direction:column;align-items:flex-end;gap:.35rem;pointer-events:auto}
+@media (max-width:860px){.top{position:relative;top:auto;padding-block:.5rem 0}}
+.top a{text-decoration:none}
+.home{font-size:1.45rem;line-height:1}
+.top .label a{background:var(--paper);padding:.15rem .4rem;border:2px solid var(--ink)}
+.top .label a:hover{background:var(--ink);color:var(--paper)}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding-bottom:clamp(3.5rem,8vw,6rem);background:var(--paper)}
+.swirl{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.hero-in{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(2rem,5vw,4rem);align-items:start;padding-top:clamp(1.5rem,3vw,2.5rem)}
+@media (max-width:860px){.hero-in{grid-template-columns:1fr}}
+.datebadge{display:inline-block;transform:rotate(-5deg);margin:0 0 1.3rem;background:var(--ink);color:var(--paper);padding:.45rem .8rem .3rem;font-size:clamp(1.6rem,3.6vw,2.3rem);box-shadow:5px 5px 0 var(--orange)}
+.datebadge b{color:var(--orange);font-weight:400}
+h1{margin:0}
+h1 .who{display:inline-block;font:400 clamp(1.9rem,4.8vw,3rem)/1 var(--cond);letter-spacing:.04em;color:var(--paper);background:var(--ink);padding:.2em .35em .08em;margin-bottom:.35em}
+h1 .big{display:block;font-size:clamp(4rem,12.5vw,8.4rem);line-height:.9}
+h1 .big .k{display:block}
+h1 .big .o{display:block;font-size:.84em}
+.three{display:inline-grid;place-items:center;vertical-align:middle;width:1.15em;height:1.15em;margin-left:.08em;background:var(--ink);color:var(--paper);border-radius:50%;font-size:.62em;line-height:1;-webkit-text-stroke:0;text-shadow:none;transform:rotate(10deg) translateY(-.08em);box-shadow:.06em .06em 0 var(--orange)}
+.three span{padding-top:.1em}
+.yr{display:block;margin-top:.8rem;font:800 .85rem/1.3 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--ink);-webkit-text-stroke:0;text-shadow:none}
+.yr mark{background:var(--paper);color:var(--ink);padding:.15rem .4rem;border:2px solid var(--ink)}
+.pitch{max-width:33rem;margin:1.5rem 0 0;font-weight:600;font-size:1.1rem;background:var(--paper);border:3px solid var(--ink);padding:1rem 1.2rem;border-radius:6px;box-shadow:6px 6px 0 var(--ink)}
+
+.poster-wrap{position:relative;max-width:30rem;margin-inline:auto;margin-top:4.6rem}
+@media (max-width:860px){.poster-wrap{margin-top:2.6rem}}
+.poster-btn{display:block;width:100%;max-width:30rem;margin-inline:auto;padding:0;border:0;background:none;cursor:zoom-in}
+.poster{display:block;width:100%;height:auto;border:4px solid var(--ink);border-radius:6px;box-shadow:10px 10px 0 var(--ink);transform:rotate(2deg);background:var(--paper-2)}
+.count{position:absolute;left:-4rem;top:-1.6rem;z-index:2;display:inline-flex;align-items:center;gap:.55rem;margin:0;background:var(--orange);color:var(--ink);border:3px solid var(--ink);border-radius:50% 46% 52% 44%/48% 52% 46% 50%;box-shadow:5px 5px 0 var(--ink);padding:.8rem 1.1rem;transform:rotate(-8deg);pointer-events:none}
+.count b{font:400 clamp(2.3rem,5vw,3rem)/1 var(--display);color:var(--paper);font-variant-numeric:tabular-nums;-webkit-text-stroke:.05em var(--ink);paint-order:stroke fill}
+.count span{font-weight:900;font-size:clamp(.68rem,1.3vw,.8rem);line-height:1.15;letter-spacing:.1em;text-transform:uppercase}
+@media (max-width:560px){.count{left:-.9rem;top:-1.8rem;transform:rotate(-8deg) scale(.8);transform-origin:0 0}}
+.poster-cap{text-align:center;margin:1.4rem 0 0}
+.poster-cap button{font:800 .85rem var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--ink);background:var(--paper);border:2px solid var(--ink);text-decoration:none;cursor:pointer;padding:.35rem .7rem}
+.poster-cap button:hover{background:var(--ink);color:var(--paper)}
+
+/* ticket + cause card */
+.cards{position:relative;z-index:1;margin-top:clamp(2.2rem,5vw,3.2rem)}
+.combo{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);align-items:stretch;box-shadow:9px 9px 0 var(--ink)}
+@media (max-width:860px){.combo{grid-template-columns:1fr}.supporting{border-left:0!important;border-top:3px dashed var(--ink)}}
+.ticket{padding:2.4rem clamp(1.25rem,3vw,2.2rem) 1.6rem;display:grid;gap:1rem;align-content:space-between;min-width:0}
+.ticket .row{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;align-items:baseline;justify-content:space-between}
+.ticket .venue{font-size:clamp(2.3rem,5.4vw,3.2rem);margin:0;color:var(--ink)}
+.ticket .town{color:var(--muted)}
+.ticket .time{font-size:clamp(2rem,4.4vw,2.6rem);margin:0;color:var(--orange-deep)}
+.cta{display:block;text-align:center;font:400 1.55rem/1 var(--display);letter-spacing:.01em;padding:1rem;border:3px solid var(--ink);border-radius:6px;background:var(--orange);color:var(--ink);text-decoration:none;box-shadow:5px 5px 0 var(--ink);transition:transform .08s,box-shadow .08s}
+.cta:hover{background:var(--ink);color:var(--paper)}
+.cta:active{transform:translate(4px,4px);box-shadow:1px 1px 0 var(--ink)}
+.fine{margin:0;color:var(--muted);font-size:.92rem;font-weight:600}
+.supporting{border-left:3px dashed var(--ink);padding:2.4rem clamp(1.25rem,3vw,2.2rem) 1.6rem;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.7rem;background:var(--paper-2);min-width:0}
+.supporting .label{color:var(--muted)}
+.supporting svg{width:min(15rem,70%);height:auto}
+.supporting .org{margin:0;font-size:clamp(2.1rem,4.6vw,2.7rem);line-height:.95}
+.supporting p.why{margin:0;font-weight:700;font-size:.98rem;text-wrap:balance;max-width:24rem}
+
+/* black screen-print field */
+.inkfield{background:var(--ink);color:var(--paper);position:relative;padding-top:1px}
+.inkfield::before{content:"";position:absolute;left:0;right:0;top:-39px;height:40px;background:var(--melt) repeat-x 0 0/160px 40px;pointer-events:none}
+.sec{padding-block:clamp(3rem,7vw,5rem)}
+.sec h2{margin:0 0 1.8rem;font-size:clamp(2.6rem,7vw,4.4rem);line-height:.95;text-wrap:balance}
+.inkfield .toon{-webkit-text-stroke:0;text-shadow:.05em .06em 0 var(--orange-deep)}
+
+.night{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.4rem}
+@media (max-width:760px){.night{grid-template-columns:1fr}}
+.night li{padding:1.3rem 1.4rem 1.3rem;min-width:0;display:flex;flex-direction:column;gap:.35rem}
+.night .ic{width:44px;height:44px}
+.night .t{font-size:2.5rem;margin-top:.2rem}
+.night .w{font-weight:800;font-size:1.05rem}
+.night p.d{margin:0;color:var(--muted);font-size:.98rem}
+.night li.live{background:var(--orange)}
+.night li.live p.d,.night li.live .label{color:var(--ink)}
+.night li.live{box-shadow:7px 7px 0 var(--paper)}
+.when{display:flex;flex-wrap:wrap;gap:.6rem 2rem;align-items:baseline;margin:0 0 1.6rem;color:var(--cream-dim)}
+.when .cond{font-size:clamp(1.7rem,4vw,2.3rem);color:var(--paper)}
+
+.cause{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(2rem,5vw,4rem);align-items:start}
+@media (max-width:860px){.cause{grid-template-columns:1fr}}
+.cause p{margin:0 0 1rem;max-width:36rem}
+.cause .label{color:var(--orange)}
+.org-line{font:400 clamp(2rem,4.6vw,2.9rem)/1 var(--cond);letter-spacing:.03em;margin:.4rem 0 1rem}
+.ways{list-style:none;margin:0;padding:0;display:grid;gap:1.4rem}
+.ways li{padding:1.1rem 1.3rem;border-left:14px solid var(--orange)}
+.ways .w{font:400 2rem/1 var(--cond);letter-spacing:.03em}
+.ways p{margin:.3rem 0 0;color:var(--muted);font-size:.98rem}
+
+.go{padding:clamp(1.8rem,4vw,2.6rem) clamp(1.25rem,4vw,2.5rem) clamp(1.5rem,4vw,2.2rem);display:flex;flex-wrap:wrap;gap:1.5rem 3rem;align-items:center;justify-content:space-between}
+.go h2{margin:0 0 .6rem;color:var(--ink)}
+.go .toon{-webkit-text-stroke:.06em var(--ink);text-shadow:.05em .06em 0 var(--ink)}
+.go p{margin:0;max-width:30rem}
+.go .side{display:grid;gap:1rem;min-width:min(100%,19rem)}
+.addr{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem;min-width:0}
+.addr address{font:400 1.6rem/1.05 var(--cond);letter-spacing:.03em;font-style:normal;user-select:all}
+.copy{font:800 .78rem var(--sans);letter-spacing:.1em;text-transform:uppercase;background:var(--ink);color:var(--paper);border:3px solid var(--ink);border-radius:6px;box-shadow:3px 3px 0 var(--orange);padding:.5rem .8rem;cursor:pointer}
+.copy:active{transform:translate(3px,3px);box-shadow:0 0 0 var(--orange)}
+.maps{font-weight:800;font-size:.9rem;text-underline-offset:3px}
+
+.lightbox{position:fixed;inset:0;z-index:50;background:rgba(20,17,16,.94);display:flex;align-items:center;justify-content:center;padding:calc(16px + env(safe-area-inset-top,0px)) 16px calc(16px + env(safe-area-inset-bottom,0px))}
+.lightbox[hidden]{display:none}
+.lightbox img{max-width:100%;max-height:100%;width:auto;height:auto;border:4px solid var(--paper);border-radius:6px;cursor:zoom-out}
+.lightbox .close{position:absolute;top:calc(12px + env(safe-area-inset-top,0px));right:12px;font:400 1.5rem var(--cond);letter-spacing:.06em;background:var(--orange);color:var(--ink);border:3px solid var(--ink);border-radius:6px;box-shadow:4px 4px 0 var(--paper);padding:.45rem .9rem .3rem;cursor:pointer}
+
+footer{background:var(--ink);color:var(--paper);border-top:3px dashed var(--ink-2)}
+footer .wrap{padding-block:2rem 3rem;display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-between;align-items:center}
+footer .sign{font-size:clamp(1.4rem,3.4vw,2rem);line-height:1.15;margin:0;text-wrap:balance}
+footer .sign.toon{-webkit-text-stroke:0;text-shadow:none}
+footer .meta{display:grid;gap:.35rem;justify-items:end;color:var(--cream-dim)}
+@media (max-width:600px){footer .meta{justify-items:start}}
+footer a{text-decoration:none}
+footer a:hover{color:var(--orange)}
+</style>
+<style>[hidden]{display:none!important}img{max-width:100%}</style>
+</head>
+<body>
+
+<div class="masthead">
+  <div id="top" class="ticker" aria-hidden="true">
+    <div class="run">
+      <span>90's Scream 3</span><i>✶</i><span>Sat Oct 24</span><i>✶</i><span>6–11pm</span><i>✶</i><span>Wings Meeting Place</span><i>✶</i><span>Costume contest</span><i>✶</i><span>Live: The West Ends</span><i>✶</i>
+      <span>90's Scream 3</span><i>✶</i><span>Sat Oct 24</span><i>✶</i><span>6–11pm</span><i>✶</i><span>Wings Meeting Place</span><i>✶</i><span>Costume contest</span><i>✶</i><span>Live: The West Ends</span><i>✶</i>
+    </div>
+  </div>
+  <header class="wrap top">
+    <div class="topright">
+      <p class="label"><a href="https://facebook.com/TheWestEnds">facebook.com/TheWestEnds</a></p>
+    </div>
+  </header>
+</div>
+
+<main>
+  <section class="hero">
+    <svg class="swirl" aria-hidden="true" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <radialGradient id="rings" cx="72%" cy="34%" r="9%" spreadMethod="repeat">
+          <stop offset="0" stop-color="#f05a1a"/><stop offset=".52" stop-color="#f05a1a"/>
+          <stop offset=".52" stop-color="#f4e9d6"/><stop offset="1" stop-color="#f4e9d6"/>
+        </radialGradient>
+        <filter id="melt" x="-20%" y="-20%" width="140%" height="140%">
+          <feTurbulence type="fractalNoise" baseFrequency=".0045 .006" numOctaves="2" seed="7"/>
+          <feDisplacementMap in="SourceGraphic" scale="190" xChannelSelector="R" yChannelSelector="G"/>
+        </filter>
+      </defs>
+      <rect x="-150" y="-150" width="1300" height="1300" fill="url(#rings)" filter="url(#melt)"/>
+    </svg>
+
+    <div class="wrap hero-in">
+      <div>
+        <p class="datebadge cond">Saturday <b>Oct 24th</b></p>
+        <h1 class="toon">
+          <span class="who">The West Ends present</span>
+          <span class="big"><span class="k">90's</span><span class="o">Scream<span class="three" aria-label="3"><span>3</span></span></span></span>
+          <span class="yr"><mark>The third annual · Halloween 2026</mark></span>
+        </h1>
+        <p class="pitch">Year three of Buffalo's 90's Halloween party. The West Ends play the 90s and 00s alternative songs you taped off the radio, there's a costume contest with prizes for the best individual and group looks, and the 50/50 and giveaways support Wings Flights of Hope. Flannel counts as a costume. Probably.</p>
+      </div>
+
+      <div>
+        <div class="poster-wrap">
+          <button class="poster-btn" type="button" data-open aria-label="View the full poster"><img class="poster" src="poster.jpg" width="1000" height="1500" alt="90's Scream poster: a Bigfoot in a backwards cap and white sunglasses throws the horns over an orange psychedelic swirl, with a Converse sneaker, a cassette and an old TV showing a jack-o'-lantern. October 24, 6 PM to 11 PM, live music by Buffalo's alternative band The West Ends, at Wings Meeting Place, 3964 California Rd, Orchard Park."></button>
+          <p class="count"><b id="days">18</b><span id="days-l">days to<br>Scream</span></p>
+        </div>
+        <p class="poster-cap"><button type="button" data-open>View the full poster</button></p>
+      </div>
+    </div>
+
+    <div class="wrap cards">
+      <div class="panel capped combo">
+        <div class="ticket">
+          <div class="row">
+            <p class="venue toon"><span class="k">Wings Meeting Place</span></p>
+          </div>
+          <div class="row">
+            <p class="time cond">6pm – 11pm</p>
+            <p class="label town">Orchard Park, NY</p>
+          </div>
+          <a class="cta" href="https://tix.gobo.show/events/event/KYwRla5Adm33WINlsAAA" target="_blank" rel="noopener">Get tickets</a>
+          <p class="fine">Same ticket link as the QR code on the poster.</p>
+        </div>
+        <div class="supporting">
+          <p class="label">Proudly supporting</p>
+          <svg viewBox="0 0 240 70" aria-hidden="true">
+            <path d="M120 42 C100 20 62 14 18 22 C42 28 58 34 66 42 C46 40 30 44 18 52 C52 48 86 52 120 58 Z" fill="#f05a1a" stroke="#141110" stroke-width="3" stroke-linejoin="round"/>
+            <path d="M120 42 C140 20 178 14 222 22 C198 28 182 34 174 42 C194 40 210 44 222 52 C188 48 154 52 120 58 Z" fill="#f05a1a" stroke="#141110" stroke-width="3" stroke-linejoin="round"/>
+            <circle cx="120" cy="46" r="9" fill="#141110"/>
+          </svg>
+          <p class="org cond">Wings Flights of Hope</p>
+          <p class="why">Orchard Park volunteer pilots flying patients to the medical care they need.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="inkfield">
+    <section class="wrap sec" aria-labelledby="night-h">
+      <h2 id="night-h" class="toon"><span class="p">The</span> <span class="o">Night</span></h2>
+      <p class="when"><span class="cond">Saturday, October 24</span><span class="label">6pm – 11pm · Wings Meeting Place</span></p>
+      <ul class="night">
+        <li class="panel live">
+          <svg class="ic" viewBox="0 0 44 44" aria-hidden="true"><path d="M14 30 V10 L34 6 V26" fill="none" stroke="#141110" stroke-width="3.5" stroke-linejoin="round"/><ellipse cx="10" cy="31" rx="6" ry="5" fill="#141110"/><ellipse cx="30" cy="27" rx="6" ry="5" fill="#141110"/></svg>
+          <p class="label">Live music</p>
+          <div class="t toon"><span class="k">The West Ends</span></div>
+          <p class="d">Buffalo's alternative band, playing the 90s and 00s songs everyone knows the words to.</p>
+        </li>
+        <li class="panel">
+          <svg class="ic" viewBox="0 0 44 44" aria-hidden="true"><path d="M8 40 V20 C8 10 14 4 22 4 C30 4 36 10 36 20 V40 L31 36 L26 40 L22 36 L18 40 L13 36 Z" fill="#f4e9d6" stroke="#141110" stroke-width="3" stroke-linejoin="round"/><ellipse cx="17" cy="19" rx="2.6" ry="3.6" fill="#141110"/><ellipse cx="27" cy="19" rx="2.6" ry="3.6" fill="#141110"/></svg>
+          <p class="label">Costume contest</p>
+          <div class="t toon"><span class="o">Dress 90's</span></div>
+          <p class="d">Prizes for the best individual costume and the best group costume. Bring the whole crew.</p>
+        </li>
+        <li class="panel">
+          <svg class="ic" viewBox="0 0 44 44" aria-hidden="true"><rect x="6" y="18" width="32" height="22" fill="#f05a1a" stroke="#141110" stroke-width="3"/><rect x="4" y="12" width="36" height="8" fill="#f05a1a" stroke="#141110" stroke-width="3"/><path d="M22 12 V40" stroke="#141110" stroke-width="3"/><path d="M22 12 C16 2 8 6 14 12 M22 12 C28 2 36 6 30 12" fill="none" stroke="#141110" stroke-width="3"/></svg>
+          <p class="label">Giveaways</p>
+          <div class="t toon"><span class="o">50/50 &amp; more</span></div>
+          <p class="d">Giveaways and a 50/50 drawing all night, raising money for Wings Flights of Hope.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="wrap sec" aria-labelledby="cause-h" style="padding-top:0">
+      <h2 id="cause-h" class="toon"><span class="p">Scream for a</span> <span class="o">cause</span></h2>
+      <div class="cause">
+        <div>
+          <p class="label">Supporting</p>
+          <p class="org-line">Wings Flights of Hope</p>
+          <p>Wings Flights of Hope is an Orchard Park nonprofit whose volunteer pilots fly people to medical treatment they couldn't otherwise get to.</p>
+          <p>You show up for the music and the costumes. Your tickets, the 50/50 and the giveaways help keep those planes in the air.</p>
+        </div>
+        <ul class="ways">
+          <li class="panel"><div class="w">Grab a ticket</div><p>Buy online through the link above or scan the QR code on the poster.</p></li>
+          <li class="panel"><div class="w">Play the 50/50</div><p>Half to the winner, half to Wings Flights of Hope.</p></li>
+          <li class="panel"><div class="w">Win something</div><p>Giveaways through the night, plus prizes for the costume contest winners.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="wrap sec" aria-labelledby="go-h" style="padding-top:0">
+      <div class="panel capped go">
+        <div>
+          <h2 id="go-h" class="toon"><span class="k">See you</span> <span class="o">Oct 24</span></h2>
+          <p>Doors at 6pm at Wings Meeting Place in Orchard Park. Wear the costume. Bring your friends.</p>
+        </div>
+        <div class="side">
+          <div class="addr">
+            <address id="addr">3964 California Rd, Orchard Park, NY</address>
+            <button class="copy" id="copy" type="button">Copy address</button>
+          </div>
+          <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Wings+Meeting+Place+3964+California+Rd+Orchard+Park+NY" target="_blank" rel="noopener">Open in Maps</a>
+          <a class="cta" href="https://tix.gobo.show/events/event/KYwRla5Adm33WINlsAAA" target="_blank" rel="noopener">Get tickets</a>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Full poster" hidden>
+  <button class="close" type="button" id="lb-close">Close</button>
+  <img src="poster.jpg" width="1000" height="1500" alt="90's Scream poster, full size.">
+</div>
+
+<footer>
+  <div class="wrap">
+    <p class="sign toon"><span class="o">90's Scream 3</span> <span class="p">· Buffalo Alternative Halloween</span></p>
+    <div class="meta">
+      <p class="label"><a href="https://facebook.com/TheWestEnds">facebook.com/TheWestEnds</a></p>
+      <p class="label">A Mezur Productions event</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  try{
+    var show=new Date(2026,9,24), now=new Date(); now.setHours(0,0,0,0);
+    var d=Math.round((show-now)/864e5), el=document.getElementById('days'), l=document.getElementById('days-l');
+    if(d>0){el.textContent=d;if(d===1)l.innerHTML='day to<br>Scream'}
+    else if(d===0){el.textContent='!';l.textContent='Tonight'}
+    else{el.parentNode.hidden=true}
+  }catch(e){}
+
+  var lb=document.getElementById('lightbox'),last=null;
+  function openLb(){last=document.activeElement;lb.hidden=false;document.getElementById('lb-close').focus()}
+  function closeLb(){lb.hidden=true;if(last)last.focus()}
+  Array.prototype.forEach.call(document.querySelectorAll('[data-open]'),function(b){b.addEventListener('click',openLb)});
+  lb.addEventListener('click',function(e){if(e.target===e.currentTarget||e.target.id==='lb-close'||e.target.tagName==='IMG')closeLb()});
+  addEventListener('keydown',function(e){if(e.key==='Escape'&&!lb.hidden)closeLb()});
+
+  document.getElementById('copy').addEventListener('click',function(){
+    var b=this,a=document.getElementById('addr');
+    function pick(){var r=document.createRange();r.selectNodeContents(a);var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected, press copy'}
+    try{navigator.clipboard.writeText(a.textContent).then(function(){b.textContent='Copied'},pick)}catch(e){pick()}
+    setTimeout(function(){b.textContent='Copy address'},2200);
+  });
+})();
+</script>
+
+</body>
+</html>
