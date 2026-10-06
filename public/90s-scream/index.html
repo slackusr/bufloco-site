@@ -146,7 +146,14 @@ h1 .big .o{display:block;font-size:.84em}
 .night p.d{margin:0;color:var(--muted);font-size:.98rem}
 .night li.live{background:var(--orange)}
 .night li.live p.d,.night li.live .label{color:var(--ink)}
-.night li.live{box-shadow:7px 7px 0 var(--paper)}
+.night li.live{box-shadow:7px 7px 0 var(--paper);cursor:pointer;transition:transform .12s,box-shadow .12s}
+.card-link{color:inherit;text-decoration:none}
+.card-link::after{content:"";position:absolute;inset:0;border-radius:inherit}
+.card-link:focus-visible{outline:none}
+.night li.live:has(.card-link:focus-visible){outline:4px solid var(--paper);outline-offset:3px}
+.night li.live:hover{transform:translate(-3px,-3px);box-shadow:10px 10px 0 var(--paper)}
+.night li.live:active{transform:translate(3px,3px);box-shadow:3px 3px 0 var(--paper)}
+.night .fb{margin:auto 0 0;padding-top:.4rem;font:800 .78rem/1.3 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--ink);text-decoration:underline;text-underline-offset:3px}
 .when{display:flex;flex-wrap:wrap;gap:.6rem 2rem;align-items:baseline;margin:0 0 1.6rem;color:var(--cream-dim)}
 .when .cond{font-size:clamp(1.7rem,4vw,2.3rem);color:var(--paper)}
 
@@ -265,8 +272,9 @@ footer a:hover{color:var(--orange)}
         <li class="panel live">
           <svg class="ic" viewBox="0 0 44 44" aria-hidden="true"><path d="M14 30 V10 L34 6 V26" fill="none" stroke="#141110" stroke-width="3.5" stroke-linejoin="round"/><ellipse cx="10" cy="31" rx="6" ry="5" fill="#141110"/><ellipse cx="30" cy="27" rx="6" ry="5" fill="#141110"/></svg>
           <p class="label">Live music</p>
-          <div class="t toon"><span class="k">The West Ends</span></div>
+          <div class="t toon"><a class="card-link" href="https://facebook.com/TheWestEnds" target="_blank" rel="noopener"><span class="k">The West Ends</span></a></div>
           <p class="d">Buffalo's alternative band, playing the 90s and 00s songs everyone knows the words to.</p>
+          <p class="fb">Follow on Facebook <span aria-hidden="true">↗</span></p>
         </li>
         <li class="panel">
           <svg class="ic" viewBox="0 0 44 44" aria-hidden="true"><path d="M8 40 V20 C8 10 14 4 22 4 C30 4 36 10 36 20 V40 L31 36 L26 40 L22 36 L18 40 L13 36 Z" fill="#f4e9d6" stroke="#141110" stroke-width="3" stroke-linejoin="round"/><ellipse cx="17" cy="19" rx="2.6" ry="3.6" fill="#141110"/><ellipse cx="27" cy="19" rx="2.6" ry="3.6" fill="#141110"/></svg>
