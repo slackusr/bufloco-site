@@ -128,7 +128,9 @@ h1 .big .o{display:block;font-size:.84em}
 .logos{list-style:none;margin:0;padding:0;display:grid;gap:1.5rem;justify-items:center;width:100%}
 .logos li{width:100%;display:flex;justify-content:center}
 .logos img{display:block;height:auto}
-.logos li:nth-child(1) img{width:min(100%,17rem)}
+.sp-link{display:flex;justify-content:center;width:100%;transition:transform .12s}
+.sp-link:hover{transform:scale(1.04)}
+.logos li:nth-child(1) img,.logos li:nth-child(1) .sp-link img{width:min(100%,17rem)}
 .logos li:nth-child(2) img{width:min(100%,18rem)}
 
 /* black screen-print field */
@@ -256,7 +258,7 @@ footer a:hover{color:var(--orange)}
         <div class="supporting sponsors">
           <p class="label">Brought to you by</p>
           <ul class="logos">
-            <li><img src="sponsor-hollyweed.png" width="760" height="194" alt="Hollyweed"></li>
+            <li><a class="sp-link" href="https://puffboard.com/hollyweed/" target="_blank" rel="noopener"><img src="sponsor-hollyweed.png" width="760" height="194" alt="Hollyweed"></a></li>
             <li><img src="sponsor-cannaspace.png" width="900" height="67" alt="Cannaspace"></li>
           </ul>
         </div>
