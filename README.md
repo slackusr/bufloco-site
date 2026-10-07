@@ -1,6 +1,6 @@
-# bufloco.com
+# buflo.co
 
-Static site for bufloco.com, deployed with Cloudflare Pages.
+Static site for buflo.co, deployed as the Cloudflare Worker `bufloco-site` (static assets from `public/`). bufloco.com 301-redirects to buflo.co via a Cloudflare Redirect Rule.
 
 - `public/index.html`: Buf.Lo Co landing page
 - `public/90s-altmas/`: The West Ends' 90's Alt-Mas Bash 2026 event page
