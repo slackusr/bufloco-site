@@ -37,6 +37,11 @@ a:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 .bar{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;padding-block:1.1rem;border-bottom:1px solid var(--line)}
 .logo{font:900 1.5rem/1 var(--display);letter-spacing:.02em;text-decoration:none;text-transform:uppercase}
 .logo b{color:var(--accent)}
+.wx{display:flex;align-items:center;gap:.7rem;text-decoration:none}
+.wx .mono{text-align:right;line-height:1.35;font-size:.72rem}
+.wx .mono b{display:block;color:var(--ink);font-weight:500}
+.wx .t{font:900 1.9rem/1 var(--display);letter-spacing:.01em;font-variant-numeric:tabular-nums}
+.wx .t b{color:var(--accent)}
 
 .hero{padding-block:clamp(2.5rem,7vw,5rem) 0}
 .hero .mono{margin:0 0 1rem}
@@ -67,6 +72,10 @@ footer .big b{color:var(--accent)}
 
 <header class="wrap bar">
   <a class="logo" href="index.html">Buf<b>.</b>Lo Co</a>
+  <div class="wx" id="wx" hidden aria-live="polite">
+    <div class="mono"><b>Buffalo now</b><span id="wx-cond"></span></div>
+    <div class="t"><span id="wx-temp"></span><b>&deg;</b></div>
+  </div>
 </header>
 
 <main>
@@ -172,5 +181,32 @@ footer .big b{color:var(--accent)}
   </div>
 </footer>
 
+<script>
+(function(){
+  var URL='https://api.open-meteo.com/v1/forecast?latitude=42.8864&longitude=-78.8784&current=temperature_2m,weather_code,is_day&temperature_unit=fahrenheit&timezone=America%2FNew_York';
+  function cond(c,day){
+    if(c===0)return day?'Clear skies':'Clear night';
+    if(c<=2)return 'Partly cloudy';
+    if(c===3)return 'Overcast';
+    if(c===45||c===48)return 'Fog';
+    if(c>=51&&c<=57)return 'Drizzle';
+    if(c>=61&&c<=67)return 'Rain';
+    if(c>=71&&c<=77)return 'Snow';
+    if(c>=80&&c<=82)return 'Showers';
+    if(c===85||c===86)return 'Snow squalls';
+    if(c>=95)return 'Thunderstorms';
+    return '';
+  }
+  function load(){
+    fetch(URL).then(function(r){return r.ok?r.json():Promise.reject()}).then(function(d){
+      var c=d.current; if(!c||c.temperature_2m==null)return;
+      document.getElementById('wx-temp').textContent=Math.round(c.temperature_2m);
+      document.getElementById('wx-cond').textContent=cond(c.weather_code,c.is_day);
+      document.getElementById('wx').hidden=false;
+    }).catch(function(){});
+  }
+  load(); setInterval(load,10*60*1000);
+})();
+</script>
 </body>
 </html>
