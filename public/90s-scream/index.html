@@ -188,6 +188,45 @@ h1 .big .o{display:block;font-size:.84em}
 .lightbox img{max-width:100%;max-height:100%;width:auto;height:auto;border:4px solid var(--paper);border-radius:6px;cursor:zoom-out}
 .lightbox .close{position:absolute;top:calc(12px + env(safe-area-inset-top,0px));right:12px;font:400 1.5rem var(--cond);letter-spacing:.06em;background:var(--orange);color:var(--ink);border:3px solid var(--ink);border-radius:6px;box-shadow:4px 4px 0 var(--paper);padding:.45rem .9rem .3rem;cursor:pointer}
 
+/* photo gallery: polaroid stack on the ink field, opens a full-screen swipe viewer */
+.gal{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,34rem);gap:1.5rem 2.5rem;align-items:center}
+@media (max-width:760px){.gal{grid-template-columns:1fr}}
+.gal p.lede{margin:0 0 1.2rem;max-width:32rem;color:var(--cream-dim)}
+.gal .open-all{display:inline-block;font:400 1.5rem/1 var(--display);padding:.85rem 1.3rem;border:3px solid var(--ink);border-radius:6px;background:var(--orange);color:var(--ink);box-shadow:5px 5px 0 var(--paper);cursor:pointer}
+.gal .open-all:hover{background:var(--paper)}
+.gal .open-all:active{transform:translate(4px,4px);box-shadow:1px 1px 0 var(--paper)}
+.stack{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;width:100%}
+.stack li:nth-child(n+7){display:none}
+.stack button{display:block;width:100%;padding:.45rem .45rem 1.6rem;background:var(--paper);border:0;box-shadow:5px 5px 0 var(--orange);cursor:zoom-in;transition:transform .15s}
+.stack li:nth-child(3n+1) button{transform:rotate(-3deg)}
+.stack li:nth-child(3n+2) button{transform:rotate(2deg) translateY(.4rem)}
+.stack li:nth-child(3n) button{transform:rotate(-1deg)}
+.stack button:hover,.stack button:focus-visible{transform:rotate(0) scale(1.05);position:relative;z-index:2}
+.stack img{display:block;width:100%;aspect-ratio:1;object-fit:cover;background:var(--ink-2)}
+.stack .more{position:relative}
+.stack .more::after{content:attr(data-more);position:absolute;inset:.45rem .45rem 1.6rem;display:grid;place-items:center;background:rgba(20,17,16,.72);color:var(--paper);font:400 2rem/1 var(--display)}
+
+.viewer{position:fixed;inset:0;z-index:60;background:#0e0a0c;display:grid;grid-template-rows:auto minmax(0,1fr) auto;padding:env(safe-area-inset-top,0px) 0 env(safe-area-inset-bottom,0px);color:var(--paper)}
+.viewer[hidden]{display:none}
+.v-top{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:.7rem 1rem;padding:.8rem 16px}
+.v-top .v-tabs{grid-column:1/-1;grid-row:2}
+.v-tabs:empty{display:none}
+.v-title{margin:0;font:400 clamp(1.5rem,4vw,2.1rem)/1 var(--display);color:var(--orange)}
+.v-tabs{display:flex;flex-wrap:wrap;gap:.4rem}
+.v-tabs button{font:800 .74rem/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;padding:.5rem .7rem;border:2px solid var(--paper);border-radius:999px;background:none;color:var(--paper);cursor:pointer}
+.v-tabs button[aria-pressed="true"]{background:var(--orange);border-color:var(--orange);color:var(--ink)}
+.v-close{font:400 1.5rem var(--cond);letter-spacing:.06em;background:var(--orange);color:var(--ink);border:3px solid var(--ink);border-radius:6px;box-shadow:4px 4px 0 var(--paper);padding:.45rem .9rem .3rem;cursor:pointer}
+.track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior:contain;min-height:0}
+.track::-webkit-scrollbar{display:none}
+.slide{flex:0 0 100%;scroll-snap-align:center;display:grid;grid-template-rows:minmax(0,1fr) auto;place-items:center;padding:.5rem 16px;min-height:0;margin:0}
+.slide img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;border:4px solid var(--paper);border-radius:4px;background:var(--ink-2)}
+.slide figcaption{padding-top:.7rem;font-weight:700;font-size:.95rem;color:var(--cream-dim);text-align:center}
+.v-bot{display:flex;align-items:center;justify-content:center;gap:1.2rem;padding:.6rem 16px 1rem}
+.v-bot button{width:3.2rem;height:3.2rem;border-radius:50%;border:3px solid var(--ink);background:var(--paper);color:var(--ink);font:400 1.6rem/1 var(--display);cursor:pointer;box-shadow:3px 3px 0 var(--orange)}
+.v-bot button:disabled{opacity:.3;cursor:default}
+.v-count{font:400 1.5rem/1 var(--cond);letter-spacing:.06em;min-width:5.5rem;text-align:center;font-variant-numeric:tabular-nums}
+@media (hover:none){.v-bot button{display:none}}
+
 footer{background:var(--ink);color:var(--paper);border-top:3px dashed var(--ink-2)}
 footer .wrap{padding-block:2rem 3rem;display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-between;align-items:center}
 footer .sign{font-size:clamp(1.4rem,3.4vw,2rem);line-height:1.15;margin:0;text-wrap:balance}
@@ -288,6 +327,17 @@ footer a:hover{color:var(--orange)}
       </ul>
     </section>
 
+    <section class="wrap sec" id="photos" aria-labelledby="photos-h" style="padding-top:0" hidden>
+      <h2 id="photos-h" class="toon"><span class="p">Screams</span> <span class="o">past</span></h2>
+      <div class="gal">
+        <div>
+          <p class="lede">Two years of costumes, flannel and bad decisions. Tap any photo to flip through the whole album.</p>
+          <button class="open-all" type="button" data-gal="0">View all photos</button>
+        </div>
+        <ul class="stack" id="stack"></ul>
+      </div>
+    </section>
+
     <section class="wrap sec" aria-labelledby="cause-h" style="padding-top:0">
       <h2 id="cause-h" class="toon"><span class="p">Scream for a</span> <span class="o">cause</span></h2>
       <div class="cause">
@@ -327,6 +377,20 @@ footer a:hover{color:var(--orange)}
   </div>
 </main>
 
+<div class="viewer" id="viewer" role="dialog" aria-modal="true" aria-labelledby="v-title" hidden>
+  <div class="v-top">
+    <p class="v-title" id="v-title">90's Scream photos</p>
+    <div class="v-tabs" id="v-tabs"></div>
+    <button class="v-close" type="button" id="v-close">Close</button>
+  </div>
+  <div class="track" id="track" tabindex="0" aria-label="Photos, swipe or use arrow keys"></div>
+  <div class="v-bot">
+    <button type="button" id="v-prev" aria-label="Previous photo">&lsaquo;</button>
+    <span class="v-count" id="v-count" aria-live="polite"></span>
+    <button type="button" id="v-next" aria-label="Next photo">&rsaquo;</button>
+  </div>
+</div>
+
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Full poster" hidden>
   <button class="close" type="button" id="lb-close">Close</button>
   <img src="poster.jpg" width="1000" height="1500" alt="90's Scream poster, full size.">
@@ -351,6 +415,49 @@ footer a:hover{color:var(--orange)}
     else if(d===0){el.textContent='!';l.textContent='Tonight'}
     else{el.parentNode.hidden=true}
   }catch(e){}
+
+  // ---- photo gallery ----
+  // Add photos here: full-size in gallery/, square thumbnails in gallery/thumbs/ (same filename).
+  var PHOTOS=[
+  ];
+  (function(){
+    if(!PHOTOS.length)return;
+    var sec=document.getElementById('photos'),stack=document.getElementById('stack'),viewer=document.getElementById('viewer'),
+        track=document.getElementById('track'),tabs=document.getElementById('v-tabs'),count=document.getElementById('v-count'),
+        prev=document.getElementById('v-prev'),next=document.getElementById('v-next'),last=null,list=PHOTOS,filter=null;
+    sec.hidden=false;
+    PHOTOS.forEach(function(p,i){
+      if(i>5)return;
+      var li=document.createElement('li'),b=document.createElement('button');
+      b.type='button';b.setAttribute('data-gal',i);b.setAttribute('aria-label','Open photo '+(i+1)+' of '+PHOTOS.length);
+      b.innerHTML='<img loading="lazy" src="gallery/thumbs/'+p.src+'" alt="">';
+      if(i===5&&PHOTOS.length>6){b.className='more';b.setAttribute('data-more','+'+(PHOTOS.length-5))}
+      li.appendChild(b);stack.appendChild(li);
+    });
+    var events=[];PHOTOS.forEach(function(p){if(events.indexOf(p.event)<0)events.push(p.event)});
+    function tab(label,val){var b=document.createElement('button');b.type='button';b.textContent=label;b.onclick=function(){build(val,0)};b._v=val;tabs.appendChild(b)}
+    if(events.length>1){tab('All',null);events.forEach(function(e){tab(e,e)})}
+    function build(f,start){
+      filter=f;list=f?PHOTOS.filter(function(p){return p.event===f}):PHOTOS;
+      Array.prototype.forEach.call(tabs.children,function(b){b.setAttribute('aria-pressed',b._v===f?'true':'false')});
+      track.innerHTML=list.map(function(p,i){
+        return '<figure class="slide"><img loading="'+(Math.abs(i-start)<2?'eager':'lazy')+'" src="gallery/'+p.src+'" alt="'+(p.alt||p.caption||p.event).replace(/"/g,'&quot;')+'">'+
+          '<figcaption>'+[p.event,p.caption].filter(Boolean).join(' · ')+'</figcaption></figure>';
+      }).join('');
+      go(start,true);
+    }
+    function idx(){return Math.round(track.scrollLeft/track.clientWidth)}
+    function go(i,instant){i=Math.max(0,Math.min(list.length-1,i));track.scrollTo({left:i*track.clientWidth,behavior:instant?'auto':'smooth'});upd(i)}
+    function upd(i){count.textContent=(i+1)+' / '+list.length;prev.disabled=i===0;next.disabled=i===list.length-1}
+    var st;track.addEventListener('scroll',function(){clearTimeout(st);st=setTimeout(function(){upd(idx())},60)});
+    prev.onclick=function(){go(idx()-1)};next.onclick=function(){go(idx()+1)};
+    function open(i){last=document.activeElement;viewer.hidden=false;document.body.style.overflow='hidden';build(null,i);document.getElementById('v-close').focus()}
+    function close(){viewer.hidden=true;document.body.style.overflow='';if(last)last.focus()}
+    Array.prototype.forEach.call(document.querySelectorAll('[data-gal]'),function(b){b.addEventListener('click',function(){open(+b.getAttribute('data-gal'))})});
+    document.getElementById('v-close').onclick=close;
+    addEventListener('keydown',function(e){if(viewer.hidden)return;if(e.key==='Escape')close();else if(e.key==='ArrowRight')go(idx()+1);else if(e.key==='ArrowLeft')go(idx()-1)});
+    addEventListener('resize',function(){if(!viewer.hidden)go(idx(),true)});
+  })();
 
   // ---- night scene ----
   var still=matchMedia('(prefers-reduced-motion: reduce)').matches;
