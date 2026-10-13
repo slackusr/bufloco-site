@@ -1,8 +1,11 @@
 {
   // Static site: everything in ./public is published as-is. No build step.
+  // src/worker.js only runs for requests that don't match a file (e.g. wrong capitalisation).
   "name": "bufloco-site",
   "compatibility_date": "2026-09-01",
+  "main": "src/worker.js",
   "assets": {
-    "directory": "./public"
+    "directory": "./public",
+    "binding": "ASSETS"
   }
 }
