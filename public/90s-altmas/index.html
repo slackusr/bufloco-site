@@ -80,7 +80,9 @@ h1 .big{display:block;font-size:clamp(4.2rem,13vw,8.6rem);line-height:.98}
 .ticket .venue .r{color:var(--red)}
 .ticket .town{color:var(--muted)}
 .ticket .doors{font:400 1.8rem/1 var(--display);margin:0}
-.cta{display:block;text-align:center;font:400 1.5rem/1 var(--display);letter-spacing:.03em;padding:1rem;border:3px dashed var(--ink);border-radius:10px;background:var(--frost);color:var(--ink);text-decoration:none;cursor:default}
+.cta{display:block;text-align:center;font:400 1.5rem/1 var(--display);letter-spacing:.03em;padding:1rem;border:3px solid var(--ink);border-radius:10px;background:var(--red);color:var(--snow);text-decoration:none;box-shadow:5px 5px 0 var(--ink);transition:transform .08s,box-shadow .08s}
+.cta:hover{background:var(--green);color:var(--ink)}
+.cta:active{transform:translate(4px,4px);box-shadow:1px 1px 0 var(--ink)}
 .priceline{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem 1rem;align-items:center}
 .poster-wrap{position:relative;max-width:30rem;margin-inline:auto;margin-top:4.6rem}
 .count{position:absolute;left:-4.2rem;top:-1.5rem;z-index:2;display:inline-flex;align-items:center;gap:.55rem;margin:0;background:var(--snow);border:3px solid var(--ink);border-radius:12px;box-shadow:6px 6px 0 var(--ink);padding:.4rem .85rem .4rem .75rem;transform:rotate(-7deg);pointer-events:none}
@@ -201,7 +203,7 @@ footer a:hover{color:var(--red)}
             <p class="doors">Doors 6pm</p>
             <p class="label">Music 6–10pm</p>
           </div>
-          <a class="cta" aria-disabled="true">Ticket sales coming soon</a>
+          <a class="cta" href="https://tix.gobo.show/events/event/VFwN8l8BzaXDSbONJhkM" target="_blank" rel="noopener">Get Tickets Now</a>
           <div class="priceline">
             <span class="door">$15 at the door</span>
           </div>
