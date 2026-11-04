@@ -121,6 +121,7 @@ h1 .big{display:block;font-size:clamp(4.2rem,13vw,8.6rem);line-height:.98}
 @media (max-width:700px){.run{grid-template-columns:1fr}}
 .run li{padding:1.3rem 1.4rem 1.2rem;min-width:0}
 .run .t{font:400 2.6rem/1 var(--display);margin-top:.35rem}
+.run li > .t:first-child{margin-top:0}
 .run .w{font-weight:800;font-size:1.05rem;margin-top:.35rem}
 .run li.live{background:var(--red);color:var(--snow)}
 .run li.live .t{color:var(--snow)}
@@ -200,8 +201,7 @@ footer a:hover{color:var(--red)}
             <p class="label town">Buffalo, NY · 2026</p>
           </div>
           <div class="row">
-            <p class="doors">Doors 7pm</p>
-            <p class="label">Band at 8pm</p>
+            <p class="doors">Doors 6pm</p>
           </div>
           <a class="cta" href="https://tix.gobo.show/events/event/VFwN8l8BzaXDSbONJhkM" target="_blank" rel="noopener">Get Tickets Now</a>
           <div class="priceline">
@@ -221,9 +221,9 @@ footer a:hover{color:var(--red)}
     <section class="wrap sec" aria-labelledby="run-h">
       <h2 id="run-h" class="toon"><span class="r">The</span> <span class="g">Night</span></h2>
       <ol class="run">
-        <li class="panel"><p class="label">7pm</p><div class="t">Doors</div><div class="w">Grab a drink, find your people</div></li>
-        <li class="panel"><p class="label">7–8pm</p><div class="t">DJ</div><div class="w">Warm-up set</div></li>
-        <li class="panel live"><p class="label">8pm</p><div class="t">Live</div><div class="w">The West Ends</div></li>
+        <li class="panel"><p class="label">6pm</p><div class="t">Doors</div><div class="w">Grab a drink, find your people</div></li>
+        <li class="panel"><div class="t">DJ</div><div class="w">Warm-up set</div></li>
+        <li class="panel live"><div class="t">Live</div><div class="w">The West Ends</div></li>
       </ol>
     </section>
 
