@@ -140,6 +140,15 @@ h1 .big{display:block;font-size:clamp(4.2rem,13vw,8.6rem);line-height:.98}
 .ways li:nth-child(2){border-left:12px solid var(--green)}
 .ways li:nth-child(3){border-left:12px solid var(--purple)}
 
+.thanks{padding:clamp(1.5rem,4vw,2.5rem);text-align:center}
+.thanks h2{margin:0 0 1.4rem}
+.thanks-logos{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:1.25rem 1.5rem;align-items:center;justify-content:center}
+.thanks-logos li{display:flex;align-items:center;justify-content:center;width:min(100%,13.5rem);height:7rem}
+.thanks-logos a{display:flex;align-items:center;justify-content:center;width:100%;height:100%;transition:transform .12s}
+.thanks-logos a:hover{transform:scale(1.05)}
+.thanks-logos img{display:block;max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain}
+.thanks-logos li.sq img{max-height:6.5rem}
+.thanks-logos li.sm img{max-width:8rem}
 .sponsor{padding:clamp(1.5rem,4vw,2.5rem);display:flex;flex-wrap:wrap;gap:1.5rem 3rem;align-items:center;justify-content:space-between;background:var(--frost)}
 .sponsor h2{margin:0 0 .6rem}
 .sponsor p{margin:0;max-width:30rem}
@@ -242,6 +251,18 @@ footer a:hover{color:var(--red)}
           <li class="panel"><div class="w">Big raffle prize</div><p>One large raffle item up for grabs. Details coming soon.</p></li>
           <li class="panel"><div class="w">50/50 drawing</div><p>Half to the winner, half to the cause.</p></li>
           <li class="panel"><div class="w">Sponsorships</div><p>Local businesses can put their name behind the night.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="wrap sec" aria-labelledby="thanks-h" style="padding-top:0">
+      <div class="panel capped thanks">
+        <h2 id="thanks-h" class="toon"><span class="r">Thank you to</span> <span class="g">our sponsors</span></h2>
+        <ul class="thanks-logos">
+          <li class="sq"><a href="https://www.rossidemarco.com/" target="_blank" rel="noopener"><img src="sponsor-rossi-demarco.png" width="600" height="596" alt="Rossi &amp; DeMarco, PLLC, Attorneys at Law" loading="lazy"></a></li>
+          <li><a href="https://www.carepatrol.com/" target="_blank" rel="noopener"><img src="sponsor-carepatrol.jpg" width="900" height="205" alt="CarePatrol, Your Partner in Senior Care Solutions" loading="lazy"></a></li>
+          <li class="sm"><a href="https://www.buffalostrive.com/" target="_blank" rel="noopener"><img src="sponsor-strive.png" width="196" height="81" alt="Strive, Elevated Market Experience" loading="lazy"></a></li>
+          <li><a href="https://revitalizeyouweightloss.com/" target="_blank" rel="noopener"><img src="sponsor-revitalize-you.png" width="900" height="293" alt="Revitalize You Weight Loss Center" loading="lazy"></a></li>
         </ul>
       </div>
     </section>
